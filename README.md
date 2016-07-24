@@ -1,87 +1,76 @@
 
-#Python-Lectures
+<small><small><i>
+Introduction to Python - available from https://gitlab.erc.monash.edu.au/andrease/Python4Maths.git
 
-##Introduction
+The original version was written by Rajath Kumar and is available at https://github.com/rajathkumarmp/Python-Lectures.
+The notes have been updated for Python 3 and amended for use in Monash University mathematics courses by [Andreas Ernst](http://users.monash.edu.au/~andreas) 
+</small></small></i>
 
-Python is a modern, robust, high level programming language. It is very easy to pick up even if you are completely new to programming.
+# Python-Lectures
 
-##Installation
+## Introduction
 
-Mac OS X and Linux comes pre installed with python. Windows users can download python from https://www.python.org/downloads/ .
+Python is a modern, robust, high level programming language. It is very easy to pick up even if you are completely new to programming. 
 
-To install IPython run,
+Python, similar to other languages like matlab or R, is interpreted hence runs slowly compared to C++, Fortran or Java. However writing programs in Python is very quick. Python has a very large collection of libraries for everything from scientific computing to web services. It caters for object oriented and functional programming with module system that allows large and complex applications to be developed in Python. 
 
-    $ pip install ipython[all]
-    
-This will install all the necessary dependencies for the notebook, qtconsole, tests etc.
+These lectures are using jupyter notebooks which mix Python code with documentation. The python notebooks can be run on a webserver or stand-alone on a computer.
 
-###Installation from unofficial distributions
+To give an indication of what Python code looks like, here is a simple bit of code that defines a set $N=\{1,3,4,5,7\}$ and calculates the sum of the squared elements of this set: $$\sum_{i\in N} i^2=100$$
 
-Installing all the necessary libraries might prove troublesome. Anaconda and Canopy comes pre packaged with all the necessary python libraries and also IPython.
 
-####Anaconda
+```python
+N={1,3,4,5,7}
+print('The sum of ∑_i∈N i*i =',sum( i**2 for i in N ) )
+```
 
-Download Anaconda from https://www.continuum.io/downloads
+    The sum of ∑_i∈N i*i = 100
 
-Anaconda is completely free and includes more than 300 python packages. Both python 2.7 and 3.4 options are available.
 
-####Canopy
+## Contents
 
-Download Canopy from https://store.enthought.com/downloads/#default
+This course is broken up into a number of notebooks (chapters).
 
-Canopy has a premium version which offers 300+ python packages. But the free version works just fine. Canopy as of now supports only 2.7 but it comes with its own text editor and IPython environment.
+* [00](00.ipynb) This introduction with additional information below on how to get started in running python
+* [01](01.ipynb) Basic data types and operations (numbers, strings) 
+* [02](02.ipynb) String manipulation 
+* [03](03.ipynb) Data structures: Lists and Tuples
+* [04](04.ipynb) Data structures (continued): dictionaries
+* [05](05.ipynb) Control statements: if, for, while, try statements
+* [06](06.ipynb) Functions
+* [07](07.ipynb) Classes and basic object oriented programming
 
-##Launching IPython Notebook
+This is a tutorial style introduction to Python. For a quick reminder / summary of Python syntax the following [Quick Reference Card](http://www.cs.put.poznan.pl/csobaniec/software/python/py-qrc.html) may be useful. A longer and more detailed tutorial style introduction to python is available from the python site at: https://docs.python.org/3/tutorial/
 
-From the terminal
+
+## Installation
+
+### Loging into the web server
+The easiest way to run this and other notebooks for staff and students at Monash University is to log into the Jupyter server at [https://sci-web17-v01.ocio.monash.edu.au/hub]. The steps for running notebooks are:
+* Log in using your monash email address. The first time you log in an empty account will automatically be set up for you.
+* Press the start button (if prompted by the system)
+* Use the menu of the jupyter system to upload a .ipynb python notebook file or to start a new notebook.
+
+### Installing 
+
+Python runs on windows, linux, mac and other environments. There are many python distributions available. However the recommended way to install python under Microsoft Windows or Linux is to use the Anaconda distribution available at [https://www.continuum.io/downloads]. Make sure to get the Python *3.5* version, not 2.7. This distribution comes with the [SciPy](https://www.scipy.org/) collection of scientific python tools as well as the iron python notebook. For developing python code without notebooks consider using [spyder](https://github.com/spyder-ide/spyder) (also included with Anaconda)
+
+To open a notebook with anaconda installed, from the terminal run:
 
     ipython notebook
 
-In Canopy and Anaconda, Open the respective terminals and execute the above.
+Note that for the Monash University optimisation course additional modules relating to the commercial optimisation library [CPLEX](http://www-01.ibm.com/software/commerce/optimization/cplex-optimizer/index.html) and possibly [Gurobi](http://www.gurobi.com/) will be used. These libraries are not available as part of any standard distribution but are available under academic licence and are included on the [Monash server](https://sci-web17-v01.ocio.monash.edu.au/hub).
 
-##How to learn from this resource?
+## How to learn from this resource?
 
-You can download the pdf copy from here : [Get Started with Python](https://github.com/rajathkumarmp/Python-Lectures/blob/master/Python.pdf)
+Download all the  notebooks from Moodle or https://gitlab.erc.monash.edu.au/andrease/Python4Maths.git
 
-It is better to download all the ipython notebooks from this repository https://github.com/rajathkumarmp/Python-Lectures and learn it on the notebook itself rather than having to refer to a pdf.
+Upload them to the monash server and lauch them or launch ipython notebook from the folder which contains the notebooks. Open each one of them
 
-Launch ipython notebook from the folder which contains the notebooks. Open each one of them
+Cell > All Output > Clear
 
-    Cell > All Output > Clear
-    
 This will clear all the outputs and now you can understand each statement and learn interactively.
 
-##Table of contents
 
-
-
-[00 - Introduction and Installation](http://nbviewer.ipython.org/github/rajathkumarmp/Python-Lectures/blob/master/00.ipynb)
-
-
-[01 - Variable, Operators and Built-in Functions](http://nbviewer.ipython.org/github/rajathkumarmp/Python-Lectures/blob/master/01.ipynb)
-
-
-[02 - Print Statement, Precision and FieldWidth](http://nbviewer.ipython.org/github/rajathkumarmp/Python-Lectures/blob/master/02.ipynb)
-
-
-[03 - Lists, Tuples and Sets](http://nbviewer.ipython.org/github/rajathkumarmp/Python-Lectures/blob/master/03.ipynb)
-
-
-[04 - Strings and Dictionaries](http://nbviewer.ipython.org/github/rajathkumarmp/Python-Lectures/blob/master/04.ipynb)
-
-
-[05 - Control Flow Statements](http://nbviewer.ipython.org/github/rajathkumarmp/Python-Lectures/blob/master/05.ipynb)
-
-
-[06 - Functions](http://nbviewer.ipython.org/github/rajathkumarmp/Python-Lectures/blob/master/06.ipynb)
-
-
-[07 - Classes](http://nbviewer.ipython.org/github/rajathkumarmp/Python-Lectures/blob/master/07.ipynb)
-
-
-
-These are online read-only versions.
-
-##License
-
+## License
 This work is licensed under the Creative Commons Attribution 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/
